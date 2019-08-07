@@ -16,9 +16,9 @@ of c. That would leave character frequencies of (a:1, b:1,c:2).
 
 Complete the isValid function. It should return either the string YES 
 or the string NO.
-  
-   - isValid has the following parameter(s):
-     - s: a string
+
+isValid has the following parameter(s):
+   - s: a string
    
 ### Input Format
  
@@ -32,3 +32,15 @@ or the string NO.
 ### Output Format
  
    - Print YES if string  is valid, otherwise, print NO.
+
+### Testcases
+
+   - Testcase 0
+	    - Input
+	      -  aabbcd
+	    - Expected Output
+	      -  NO
+	    - Explanation
+	      -  Given s="aabbcd", we would need to remove two characters, both c and d to give "aabb", 
+	      -  or remove a and b to give "abcd" to make it valid. We are limited to removing only one 
+	      -  character, so s is invalid.

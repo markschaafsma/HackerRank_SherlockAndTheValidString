@@ -1,5 +1,11 @@
 # HackerRank_SherlockAndTheValidString
 
+### Overview
+
+This repository contains my Java SE 8 solution to the HackerRank problem "Sherlock and 
+the Valid String".
+https://www.hackerrank.com/challenges/sherlock-and-valid-string/problem
+
 ### Problem 
 
 Sherlock considers a string to be valid if all characters of the string appear the same 

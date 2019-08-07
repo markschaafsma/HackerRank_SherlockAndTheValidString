@@ -2,9 +2,8 @@
 
 ### Overview
 
-This repository contains my Java SE 8 solution to the HackerRank problem "Sherlock and 
-the Valid String".
-https://www.hackerrank.com/challenges/sherlock-and-valid-string/problem
+This repository contains my Java SE 8 solution to the HackerRank problem [Sherlock and 
+the Valid String](https://www.hackerrank.com/challenges/sherlock-and-valid-string/problem).
 
 ### Problem 
 

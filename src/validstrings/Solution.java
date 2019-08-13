@@ -45,44 +45,44 @@ import java.util.regex.*;
 
 public class Solution {
 
-    // Complete the isValid function below.
-    static String isValid(String s) {
+	// Complete the isValid function below.
+	static String isValid(String s) {
 
 		String valid = "YES";
     	
-    	// Count occurrences of each character
-    	char[] chars = s.toCharArray();
-    	Map<Character,Integer> charMap = new HashMap<>(26);
-    	for (char c :chars) {
-    		charMap.put(c, charMap.getOrDefault(c, 0) + 1);
-    	}
+		// Count occurrences of each character
+		char[] chars = s.toCharArray();
+		Map<Character,Integer> charMap = new HashMap<>(26);
+		for (char c :chars) {
+			charMap.put(c, charMap.getOrDefault(c, 0) + 1);
+		}
 
-    	// Count frequency of each count total
-    	Map<Integer,Integer> charFrequencyMap = new HashMap<>(26);
-    	Iterator<Integer> charCountIterator = charMap.values().iterator();
+		// Count frequency of each count total
+		Map<Integer,Integer> charFrequencyMap = new HashMap<>(26);
+		Iterator<Integer> charCountIterator = charMap.values().iterator();
 		System.out.print("Char counts: ");
-    	while (charCountIterator.hasNext()) {
-    		Integer count = charCountIterator.next();
-    		System.out.print(count + ",");
-    		charFrequencyMap.put(count, charFrequencyMap.getOrDefault(count, 0) + 1);
-    	}
+		while (charCountIterator.hasNext()) {
+			Integer count = charCountIterator.next();
+			System.out.print(count + ",");
+			charFrequencyMap.put(count, charFrequencyMap.getOrDefault(count, 0) + 1);
+		}
 		System.out.println();
     	
-    	// Count number of frequencies occurring.
+		// Count number of frequencies occurring.
 		// Also count how many frequencies occur more than once.
-    	Iterator<Integer> charFrequencyIterator = charFrequencyMap.values().iterator();
-    	int frequency = 0;
-    	int frequencies = 0;
-    	int frequenciesOccurringMoreThanOnce = 0;
+		Iterator<Integer> charFrequencyIterator = charFrequencyMap.values().iterator();
+		int frequency = 0;
+		int frequencies = 0;
+		int frequenciesOccurringMoreThanOnce = 0;
 		System.out.print("Frequencies: ");
-    	while (charFrequencyIterator.hasNext()) {
-    		frequency = charFrequencyIterator.next();
-    		System.out.print(frequency + ",");
-    		frequencies++;
-    		if (frequency > 1) {
-    			frequenciesOccurringMoreThanOnce++;
-    		}
-    	}
+		while (charFrequencyIterator.hasNext()) {
+			frequency = charFrequencyIterator.next();
+			System.out.print(frequency + ",");
+			frequencies++;
+			if (frequency > 1) {
+				frequenciesOccurringMoreThanOnce++;
+			}
+		}
 		System.out.println();
 
 		// Check count frequency data to determine if string is valid.
@@ -91,16 +91,16 @@ public class Solution {
 			// If there are more than 2 frequencies, then invalid.
 			// - e.g. aaabbc = (3,1),(2,1),(1,1))
 			if (frequencies > 2) {
-	    		valid = "NO";
-	    	}
+				valid = "NO";
+			}
 		}
 
 		if (valid.equals("YES")) {
 			// If there are more than 1 frequency with 2 or more occurrences, then invalid.
 			// - e.g aabbcd = (2,2),(1,2), then invalid.
 			if (frequenciesOccurringMoreThanOnce > 1) {
-	    		valid = "NO";
-	    	}
+				valid = "NO";
+			}
 		}
 		
 		if (valid.equals("YES")) {
@@ -121,33 +121,33 @@ public class Solution {
 						System.out.print(Math.abs(left - right) + ",");
 						if ((Math.abs(left - right) > 1) 
 						 && (charFrequencyMap.getOrDefault(1, 0) != 1)) {
-				    		valid = "NO";
+							valid = "NO";
 						}
 					}
 				}
 				System.out.println();
 			}
 		}
-    	
-    	System.out.println(valid);
-    	return valid;
-    }
 
-    private static final Scanner scanner = new Scanner(System.in);
+		System.out.println(valid);
+		return valid;
+	}
 
-    public static void main(String[] args) throws IOException {
-//      BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
-	    BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("result.txt"));
+	private static final Scanner scanner = new Scanner(System.in);
+
+	public static void main(String[] args) throws IOException {
+//		BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+		BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("result.txt"));
 	    
-        String s = scanner.nextLine();
+		String s = scanner.nextLine();
 
-        String result = isValid(s);
+		String result = isValid(s);
 
-        bufferedWriter.write(result);
-        bufferedWriter.newLine();
+		bufferedWriter.write(result);
+		bufferedWriter.newLine();
 
-        bufferedWriter.close();
+		bufferedWriter.close();
 
-        scanner.close();
-    }
+		scanner.close();
+	}
 }

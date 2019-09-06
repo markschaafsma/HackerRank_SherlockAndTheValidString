@@ -5,6 +5,13 @@
 This repository contains my Java SE 8 solution to the HackerRank problem [Sherlock and 
 the Valid String](https://www.hackerrank.com/challenges/sherlock-and-valid-string/problem).
 
+Of most interest is this contains example uses of:
+
+    Map<Character,Integer>
+    Map<Integer,Integer>
+    Iterator<Integer>
+    Collection<Integer>
+
 ### Problem 
 
 Sherlock considers a string to be valid if all characters of the string appear the same 
@@ -46,6 +53,6 @@ isValid has the following parameter(s):
 	    - Expected Output
 	      -  NO
 	    - Explanation
-	      -  Given s="aabbcd", we would need to remove two characters, both c and d to give "aabb", 
-	      -  or remove a and b to give "abcd" to make it valid. We are limited to removing only one 
-	      -  character, so s is invalid.
+	      - Given s="aabbcd", we would need to remove two characters, both c and d to give "aabb", 
+	        or remove a and b to give "abcd" to make it valid. We are limited to removing only one 
+	        character, so s is invalid.
